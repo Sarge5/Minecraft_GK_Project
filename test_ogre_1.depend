@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1368177401 source:c:\cb_projects\test_ogre_1\main.cpp
+	<irr/irrlicht.h>
+	"Cube.h"
+
+1368177433 source:c:\cb_projects\test_ogre_1\cube.cpp
+	"Cube.h"
+
+1368177320 c:\cb_projects\test_ogre_1\cube.h
+	<irr/irrlicht.h>
+
+1368177433 source:c:\users\cavvy\dropbox\studia\gk\test_ogre_1\cube.cpp
+	"Cube.h"
+
+1368177320 c:\users\cavvy\dropbox\studia\gk\test_ogre_1\cube.h
+	<irr/irrlicht.h>
+
+1368177486 source:c:\users\cavvy\dropbox\studia\gk\test_ogre_1\main.cpp
+	<irr/irrlicht.h>
+	"Cube.h"
+
