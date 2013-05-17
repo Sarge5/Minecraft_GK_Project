@@ -1,5 +1,6 @@
-#include <irr/irrlicht.h>
+#include <irrlicht.h>
 #include "Cube.h"
+#include "Chunk.h"
 
 using namespace irr;
 using namespace core;
@@ -22,25 +23,14 @@ int main()
 
     gui->addStaticText(L"Static Text", rect<s32>(10,10,260,22), true, true);
     scene::ICameraSceneNode * camera = manager->addCameraSceneNodeFPS();
-    camera->setFarValue(1000);
+    camera->setFarValue(100);
 
-    IAnimatedMesh* mesh = manager->getMesh("media/sydney.md2");
-    if (!mesh)
-    {
-        device->drop();
-        return 1;
-    }
+    //Cube *kostka1 = new Cube(manager, video, "media/t351sml.jpg");
+    Chunk *chunk1 = new Chunk(manager, video, "media/t351sml.jpg", 0, 0);
+    Chunk *chunk2 = new Chunk(manager, video, "media/t351sml.jpg", -1, -1);
+    Chunk *chunk3 = new Chunk(manager, video, "media/t351sml.jpg", 0, -1);
+    Chunk *chunk4 = new Chunk(manager, video, "media/t351sml.jpg", -1, 0);
 
-    Cube *kostka1 = new Cube(manager, video, "media/t351sml.jpg");
-
-    IAnimatedMeshSceneNode* node = manager->addAnimatedMeshSceneNode( mesh );
-
-    if (node)
-    {
-        node->setMaterialFlag(EMF_LIGHTING, false);
-        node->setMD2Animation(scene::EMAT_STAND);
-        node->setMaterialTexture( 0, video->getTexture("media/sydney.bmp") );
-    }
     //node->remove();
     int lastFPS = -1;
     while( device->run() )
@@ -60,7 +50,11 @@ int main()
         video->endScene();
 
     }
-    delete kostka1;
+    //delete kostka1;
+    delete chunk1;
+    delete chunk2;
+    delete chunk3;
+    delete chunk4;
     device->drop();
     return 0;
 }
